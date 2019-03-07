@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:skills', 'Unit | Route | skills', {
+moduleFor('route:resume/contact', 'Unit | Route | resume/contact', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
