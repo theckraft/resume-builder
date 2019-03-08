@@ -3,9 +3,6 @@
   {{resume.firstName}} {{resume.lastName}} <br>
 {{/each}} -->
 {{outlet}}
+<div class="ui divider"></div>
 <br>
-<button {{action "notify"}} class="ui button">Notify</button>
-
-
-<br>
-  <!-- {{conversation-cards conversations=conversations}} -->
+{{resume-cards resumes=resumes}}
