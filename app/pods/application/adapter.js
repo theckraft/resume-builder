@@ -1,3 +1,4 @@
-import ToriiFirebaseAdapter from 'emberfire/torii-adapters/firebase';
+import FirebaseAdapter from 'emberfire/adapters/firebase';
 
-export default ToriiFirebaseAdapter.extend({});
+export default FirebaseAdapter.extend({
+});
