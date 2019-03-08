@@ -1,1 +1,11 @@
+{{resume-creation-button createResume=(action "createResume")}}
+<!-- {{#each resumes as |resume|}}
+  {{resume.firstName}} {{resume.lastName}} <br>
+{{/each}} -->
 {{outlet}}
+<br>
+<button {{action "notify"}} class="ui button">Notify</button>
+
+
+<br>
+  <!-- {{conversation-cards conversations=conversations}} -->
