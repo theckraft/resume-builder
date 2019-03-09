@@ -8,5 +8,10 @@ export default Route.extend({
   beforeModel: function() {
     return this.get('session').fetch().catch(function() {});
   },
-  model: function() {}
+  model: function() {},
+  actions: {
+    refresh: function() {
+      this.refresh();
+    }
+  }
 });
