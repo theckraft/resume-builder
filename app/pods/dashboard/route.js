@@ -9,7 +9,11 @@ export default Route.extend({
     let session = this.get('session');
     if (session.get('isAuthenticated')) {
       let user = this.get('session.currentUser');
-      return user.get('resumes');
+      if(user) {
+        return user.get('resumes');
+      } else {
+        return [];
+      }
     }
   }
 });
