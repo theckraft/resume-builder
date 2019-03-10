@@ -9,7 +9,8 @@ export default Route.extend({
     this.render("resume-menu", {
       outlet: "menu",
       into: "application",
-      controller: "resume-menu"
+      controller: "resume-menu",
+      model: model
     });
   }
 });

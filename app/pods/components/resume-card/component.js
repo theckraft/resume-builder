@@ -6,7 +6,6 @@ import {
 export default Component.extend({
   //Element Attributes
   classNames: ['ui', 'raised', 'link', 'fluid card'],
-
   //Computed Properties
   lastUpdatedDateFormatted: computed('', function() {
     let date = this.get('');

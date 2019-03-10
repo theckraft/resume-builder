@@ -1,9 +1,7 @@
-{{#link-to "dashboard"}}
-  <div class="item">
-    <i class="dashboard icon"></i>
-  </div>
+{{#link-to "dashboard" class="item"}}
+  <i class="dashboard icon"></i>
 {{/link-to}}
-{{yeild}}
+{{yield}}
 <div class="ui secondary right menu">
   {{#if session.isAuthenticated}}
     <a {{action signOut}} class="item">Sign Out</a>
