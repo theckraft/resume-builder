@@ -3,5 +3,5 @@ import { inject as service } from '@ember/service';
 
 export default Component.extend({
   session: service('session'),
-  classNames: ["ui", "large", "menu"]
+  classNames: ["ui", "large", "stackable", "borderless", "menu"]
 });

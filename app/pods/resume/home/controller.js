@@ -18,8 +18,5 @@ export default Controller.extend({
     } else return false;
   }),
   actions: {
-    updateResume(resumeData) {
-      //TODO
-    }
   }
 });

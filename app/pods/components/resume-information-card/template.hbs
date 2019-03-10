@@ -7,17 +7,12 @@
     <span class="date">Current Title</span>
   </div>
   <div class="description">
-    {{description}}
+    {{resume.description}}
   </div>
 </div>
-<div class="extra content">
-  <a>
-      <i class="user icon"></i>
-      22 Friends
-    </a>
-</div>
 {{#if isOwner}}
-  <div class="ui bottom attached button">
+  <div {{action "openModal"}} class="ui bottom attached button">
     <i class="edit icon"></i> Edit
   </div>
 {{/if}}
+{{resume-edit-modal resume=resume}}
