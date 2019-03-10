@@ -1,0 +1,23 @@
+<div class="ui placeholder">
+  <div class="image"></div>
+</div>
+<div class="content">
+  <a class="large header">{{resume.fullName}}</a>
+  <div class="meta">
+    <span class="date">Current Title</span>
+  </div>
+  <div class="description">
+    {{description}}
+  </div>
+</div>
+<div class="extra content">
+  <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+</div>
+{{#if isOwner}}
+  <div class="ui bottom attached button">
+    <i class="edit icon"></i> Edit
+  </div>
+{{/if}}
