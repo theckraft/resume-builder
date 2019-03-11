@@ -58,6 +58,12 @@ export default UiModal.extend({
     },
     rollback(changeset) {
       return changeset.rollback();
+    },
+    delete() {
+      let skill = this.get('skill');
+      skill.destroyRecord();
+      this.$().modal('hide');
+      this.get('notify').info('Skill Deleted!');
     }
   }
 });
