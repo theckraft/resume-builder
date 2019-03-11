@@ -1,1 +1,8 @@
-{{outlet}}
+<h2 class="ui center aligned icon header">
+  Experience
+</h2>
+{{#if isOwner}}
+  {{experience-creation-button createExperience=(action "createExperience")}}
+{{/if}}
+<div class="ui divider"></div>
+<br> {{experience-cards experiences=experiences isOwner=isOwner}}

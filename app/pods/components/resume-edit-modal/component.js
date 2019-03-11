@@ -36,9 +36,11 @@ export default UiModal.extend({
   actions: {
     submit(changeset) {
       return changeset.save();
+      self.get('notify').success('Resume Modified!');
     },
     rollback(changeset) {
       return changeset.rollback();
+      self.get('notify').success('Resume Rollback! Did not modify.');
     },
     cancel: function() {}
   }
