@@ -75,6 +75,12 @@ export default UiModal.extend({
     },
     rollback(changeset) {
       return changeset.rollback();
+    },
+    delete() {
+      let experience = this.get('experience');
+      experience.destroyRecord();
+      this.$().modal('hide');
+      this.get('notify').info('Experience Deleted!');
     }
   }
 });
