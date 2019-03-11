@@ -18,8 +18,28 @@ import {
 } from '@ember/utils';
 
 export default Controller.extend({
+  notify: service(),
   resume: alias('model'),
   resumeController: controller('resume'),
   isOwner: alias('resumeController.isOwner'),
-  actions: {}
+  actions: {
+    delete() {
+      let resume = this.get('resume');
+
+      let experiences = resume.get('experiences');
+      experiences.forEach(function(experience) {
+        experience.destroyRecord();
+      });
+
+      let skills = resume.get('skills');
+      skills.forEach(function(skill) {
+        skill.destroyRecord();
+      });
+
+      resume.destroyRecord();
+      
+      this.get('notify').info('Resume Deleted!');
+      this.transitionToRoute('dashboard');
+    }
+  }
 });
