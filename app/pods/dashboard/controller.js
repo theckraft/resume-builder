@@ -8,9 +8,6 @@ export default Controller.extend({
   notify: service(),
   resumes: alias('model'),
   actions: {
-    notify() {
-      this.get('notify').success("This is a triumph!");
-    },
     createResume(resumeData) {
       let self = this;
       let user = this.get('session.currentUser');
