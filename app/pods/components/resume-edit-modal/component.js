@@ -5,11 +5,18 @@ import {
 import {
   isEmpty
 } from '@ember/utils';
-import { set } from '@ember/object';
+import {
+  set
+} from '@ember/object';
 import Changeset from 'ember-changeset';
+import {
+  inject as service
+} from '@ember/service';
 
 
 export default UiModal.extend({
+  //Service Injections
+  notify: service(),
 
   //Component Attributes
   classNames: [],
@@ -20,14 +27,20 @@ export default UiModal.extend({
       lastName = this.get('changeset.lastName');
 
     let isNull = isEmpty(firstName) ||
-      isEmpty(lastName) ;
+      isEmpty(lastName);
 
     return isNull;
   }),
   didInsertElement() {
     this._super(...arguments);
     let resume = this.get('resume');
-    let validator = function({ key, newValue, oldValue, changes, content }) {
+    let validator = function({
+      key,
+      newValue,
+      oldValue,
+      changes,
+      content
+    }) {
       return true;
     };
     let changeset = new Changeset(resume, validator);
@@ -41,6 +54,10 @@ export default UiModal.extend({
     rollback(changeset) {
       return changeset.rollback();
       self.get('notify').success('Resume Rollback! Did not modify.');
+    },
+    delete() {
+      this.$().modal('hide');
+      this.get('delete')();
     },
     cancel: function() {}
   }
