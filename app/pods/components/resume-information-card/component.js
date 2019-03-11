@@ -11,7 +11,9 @@ export default Component.extend({
     let sortedExperiences = experiences.sortBy('startDate');
     sortedExperiences.forEach(function(experience) {
       let endDate = experience.get('endDate');
-      if (new Date().getMonth() == endDate.getMonth()) {
+      if (endDate &&
+        new Date().getMonth() == endDate.getMonth() &&
+        new Date().getYear() == endDate.getYear()) {
         output += experience.get('title') + " ";
       }
     });

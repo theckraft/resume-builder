@@ -6,7 +6,8 @@ export default Component.extend({
   //Element Attributes
   classNames: ['ui', 'cards'],
   //Computed Properties
-  sortedExperiences: sort('experiences', function(a, b) {
-    return 0;
+  sortedExperiences: computed('experiences.@each.endDate', function() {
+    let experiences = this.get('experiences');
+    return experiences.sortBy('endDate').reverse();
   })
 });
